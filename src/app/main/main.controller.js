@@ -29,6 +29,11 @@
       }
     ];
 
+    $scope.test = function() {
+      var msg = new SpeechSynthesisUtterance("test");
+        $window.speechSynthesis.speak(msg)
+    }
+
     $scope.onSwipeLeft = function() {
       if ($scope.i < $scope.tab.length - 1) {
         $scope.i++;
