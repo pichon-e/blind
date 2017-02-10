@@ -12,9 +12,7 @@
       templateUrl: 'app/components/blindness/blindness.html',
       scope: {
       },
-      controller: blindnessController,
-      controllerAs: 'vm',
-      bindToController: true
+      controller: blindnessController
     };
 
     return directive;
