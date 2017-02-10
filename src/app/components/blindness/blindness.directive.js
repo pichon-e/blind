@@ -18,10 +18,9 @@
     return directive;
 
     function blindnessController($scope, $window) {
-      var vm = this;
 
-      vm.i = 0;
-      vm.tab = [
+      $scope.i = 0;
+      $scope.tab = [
         {
           date: 1950,
           data: 50
@@ -47,17 +46,17 @@
       }
 
       $scope.onSwipeLeft = function() {
-        if (vm.i < vm.tab.length - 1) {
-          vm.i++;
-          var msg = new SpeechSynthesisUtterance("En " + vm.tab[vm.i].date + "il y en avait " + vm.tab[vm.i].data);
+        if ($scope.i < $scope.tab.length - 1) {
+          $scope.i++;
+          var msg = new SpeechSynthesisUtterance("En " + $scope.tab[$scope.i].date + "il y en avait " + $scope.tab[$scope.i].data);
           $window.speechSynthesis.speak(msg);
         }
       }
 
       $scope.onSwipeRight = function() {
-        if (vm.i > 0) {
-          vm.i--;
-          var msg = new SpeechSynthesisUtterance("En " + vm.tab[vm.i].date + "il y en avait " + vm.tab[vm.i].data);
+        if ($scope.i > 0) {
+          $scope.i--;
+          var msg = new SpeechSynthesisUtterance("En " + $scope.tab[$scope.i].date + "il y en avait " + $scope.tab[$scope.i].data);
           $window.speechSynthesis.speak(msg);
         }
       }
