@@ -15,8 +15,7 @@
         $scope.hasToBeShown = !$scope.hasToBeShown;
     }
 
-    var ctx = document.getElementById("chart1");
-    new Chart(ctx, {
+    new Chart(document.getElementById("chart1"), {
       type: 'bar',
       backgroundColor: "#0386c3",
       data: {
@@ -107,5 +106,96 @@
         }
       }
     })
+
+    new Chart(document.getElementById("chart2"), {
+      type: 'bar',
+      backgroundColor: "#0386c3",
+      data: {
+        labels: [
+            1982,
+            1983,
+            1984,
+            1985,
+            1986,
+            1987,
+            1988,
+            1989,
+            1990,
+            1991,
+            1992,
+            1993,
+            1994,
+            1995,
+            1996,
+            1997,
+            1998,
+            1999,
+            2000,
+            2001,
+            2002,
+            2003,
+            2004,
+            2005,
+            2006,
+            2007,
+            2008,
+            2009,
+            2010,
+            2011,
+            2012,
+            2013,
+            2014,
+            2015
+        ],
+        datasets: [{
+            label: 'Solde naturel',
+            data: [
+                272536,
+                207686,
+                237170,
+                235745,
+                250805,
+                260401,
+                268033,
+                258574,
+                258685,
+                257191,
+                244941,
+                200773,
+                212653,
+                218745,
+                219425,
+                218117,
+                224497,
+                228530,
+                266804,
+                262205,
+                247504,
+                230577,
+                279891,
+                268741,
+                302432,
+                287543,
+                285829,
+                276100,
+                281581,
+                278337,
+                251179,
+                242274,
+                259300,
+                200000
+            ]
+        }],
+        options: {
+            scales: {
+                xAxes: [{
+                    type: 'linear',
+                    position: 'bottom'
+                }]
+            }
+        }
+      }
+    })
+
   }
 })();
