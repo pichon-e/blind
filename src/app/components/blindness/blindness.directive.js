@@ -10,7 +10,7 @@
     var directive = {
       scope: {
       },
-      controller: blindnessController
+      controller: ['$scope', '$mdDialog', '$window', blindnessController]
     };
 
     return directive;
