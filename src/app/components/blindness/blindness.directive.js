@@ -9,78 +9,38 @@
   function blindness() {
     var directive = {
       scope: {
+        dataset: '=',
+        isShown: '@'
       },
       controller: ['$scope', '$mdDialog', '$window', blindnessController]
     };
 
     return directive;
 
-    function blindnessController($scope, $mdDialog, $window) {
-
+    function blindnessController($scope, $mdDialog, $window, dataset, isShown) {
+      console.log('dataset', $scope.dataset);
       var confirm = $mdDialog.confirm({
-        controller: ['$scope', '$mdDialog', '$window', function($scope, $mdDialog, $window) {
+        controller: ['$scope', '$mdDialog', '$window', 'dataset', 'isShown', function($scope, $mdDialog, $window, dataset, isShown) {
 
+          $scope.dataset = dataset;
+          $scope.isShown = isShown;
           $scope.i = 0;
-          $scope.tab = [
-            {
-              date: 1950,
-              data: 50
-            },
-            {
-              date: 1960,
-              data: 190
-            },
-            {
-              date: 1970,
-              data: 1500
-            },
-            {
-              date: 1980,
-              data: 456842
-            }
-          ];
 
-          $scope.test = function() {
-            console.log("test");
-            var msg = new SpeechSynthesisUtterance("test");
-            $window.speechSynthesis.speak(msg)
-          }
-
-          $scope.onSwipeLeft = function() {
-            console.log('gauche');
-            if ($scope.i < $scope.tab.length - 1) {
-              $scope.i++;
-              var msg = new SpeechSynthesisUtterance("En " + $scope.tab[$scope.i].date + "il y en avait " + $scope.tab[$scope.i].data);
-              $window.speechSynthesis.speak(msg);
-            }
-          }
-
-          $scope.onSwipeDown = function() {
-            console.log("down");
-          }
-
-          $scope.onSwipeRight = function() {
-            console.log('droite');
-            if ($scope.i > 0) {
-              $scope.i--;
-              var msg = new SpeechSynthesisUtterance("En " + $scope.tab[$scope.i].date + "il y en avait " + $scope.tab[$scope.i].data);
-              $window.speechSynthesis.speak(msg);
-            }
-          }
-
-          $scope.ok = function() {
-            $mdDialog.hide();
-          };
           $scope.close = function() {
             console.log("up");
+            $scope.isShown = false;
             $mdDialog.hide();
           };
         }],
-        templateUrl: 'app/components/blindness/blindness.html'
+        templateUrl: 'app/components/blindness/blindness.html',
+        locals: {
+          dataset: $scope.dataset,
+          isShown: $scope.isShown
+        }
       });
 
       $mdDialog.show(confirm).then(function() {
-
+        $scope.isShown = false;
       });
 
       $scope.onSwipeUp = function() {

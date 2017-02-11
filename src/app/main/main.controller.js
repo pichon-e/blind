@@ -15,6 +15,25 @@
         $scope.hasToBeShown = !$scope.hasToBeShown;
     }
 
+          $scope.tab = [
+            {
+              date: 1950,
+              data: 50
+            },
+            {
+              date: 1960,
+              data: 190
+            },
+            {
+              date: 1970,
+              data: 1500
+            },
+            {
+              date: 1980,
+              data: 456842
+            }
+          ];
+
     new Chart(document.getElementById("chart1"), {
       type: 'bar',
       backgroundColor: "#0386c3",

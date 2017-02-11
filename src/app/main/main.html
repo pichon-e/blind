@@ -21,8 +21,8 @@
 <h2>
     66,6 millions de Français
 </h2>
-<md-button class="md-primary md-raised" ng-click="show()">click</md-button>
-<blindness ng-if="hasToBeShown"></blindness>
+<md-button class="md-primary md-raised" ng-click="show()">Taper deux fois pour énoncer le graphique</md-button>
+<blindness ng-if="hasToBeShown" is-shown="hasToBeShown" dataset="tab"></blindness>
 <p>
     C’est le nombre de Français au 1er janvier 2016, selon l’Insee. La population
     française est en croissance continue et a augmenté de 247 000 personnes entre
