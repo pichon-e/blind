@@ -47,6 +47,7 @@
           }
 
           $scope.onSwipeLeft = function() {
+            console.log('gauche');
             if ($scope.i < $scope.tab.length - 1) {
               $scope.i++;
               var msg = new SpeechSynthesisUtterance("En " + $scope.tab[$scope.i].date + "il y en avait " + $scope.tab[$scope.i].data);
@@ -54,7 +55,12 @@
             }
           }
 
+          $scope.onSwipeDown = function() {
+            console.log("down");
+          }
+
           $scope.onSwipeRight = function() {
+            console.log('droite');
             if ($scope.i > 0) {
               $scope.i--;
               var msg = new SpeechSynthesisUtterance("En " + $scope.tab[$scope.i].date + "il y en avait " + $scope.tab[$scope.i].data);
@@ -66,7 +72,7 @@
             $mdDialog.hide();
           };
           $scope.close = function() {
-            console.log("close");
+            console.log("up");
             $mdDialog.hide();
           };
         }],
