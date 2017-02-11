@@ -1,3 +1,4 @@
+
 <h1>2 graphiques pour comprendre la démographie française</h1>
 
 <p>
@@ -16,8 +17,6 @@
     l’espérance de vie. Voici ce qu’il faut retenir de ce rapport.
 </p>
 
-<video src="http://ngs08c.digiteka.net/ff4530eaf1e1319972756d1dd010061c/c3BlZWQ9MTUwO3VzZXI9bmdzO2V4cGlyZT01ODlkZjBmZQ,,/sdg1/6e/0a/6e0ab9d653d96067785076e694fae9c0cdc82aa4.mp4?mdtk=01637594"></video>
-
 <h2>
     66,6 millions de Français
 </h2>
@@ -28,8 +27,9 @@
     derrière l’Allemagne (81,2 millions d’habitants) et devant le Royaume-Uni
     (64,8 millions).
 </p>
-
-<md-button class="md-primary md-raised" ng-click="show1()">Taper deux fois pour énoncer le graphique</md-button>
+<div layout="row" layout-align="center center">
+    <md-button class="md-primary md-raised" ng-click="show1()">Taper deux fois pour énoncer le graphique</md-button>
+</div>
 <blindness ng-if="hasToBeShown1"  dataset="chart1Value" title="title1"></blindness>
 <canvas id="chart1" width="400" height="400"></canvas>
 
@@ -40,8 +40,9 @@
     moins les décès) largement positif (+200 000 personnes) et un solde migratoire
     également positif (environ 47 000 personnes).
 </p>
-
-<md-button class="md-primary md-raised" ng-click="show2()">Taper deux fois pour énoncer le graphique</md-button>
+<div layout="row" layout-align="center center">
+    <md-button class="md-primary md-raised" ng-click="show2()">Taper deux fois pour énoncer le graphique</md-button>
+</div>
 <blindness ng-if="hasToBeShown2"  dataset="chart2Value" title="title2"></blindness>
 <canvas id="chart2" width="400" height="400"></canvas>
 
@@ -67,14 +68,3 @@
     selon l’institut de veille sanitaire (InVS).
 </p>
 
-<h2>Une espérance de vie en baisse chez les hommes et les femmes</h2>
-
-<p>
-    Conséquence de cette hausse de la mortalité : l’espérance de vie à la naissance
-    en 2016 est, pour la première fois depuis 1969, en diminution chez les hommes
-    (-0,3 an, 78,9 ans au total) comme chez les femmes (-0,4 an, 85 ans au total).
-</p>
-
-<div class="main" md-swipe-left="onSwipeLeft()" md-swipe-right="onSwipeRight()"  md-swipe-up="onSwipeUp()">
-  {{tab[i].data}} {{i}}
-</div>
