@@ -9,7 +9,6 @@
   function blindness() {
     var directive = {
       restrict: 'E',
-      templateUrl: 'app/components/blindness/blindness.html',
       scope: {
       },
       controller: blindnessController
@@ -17,7 +16,7 @@
 
     return directive;
 
-    function blindnessController($scope, $window) {
+    function blindnessController($scope, $window, $mdDialog) {
 
       $scope.i = 0;
       $scope.tab = [
@@ -38,6 +37,19 @@
           data: 456842
         }
       ];
+
+      var confirm = $mdDialog.confirm({
+        controller: ['$scope', '$mdDialog', '$state', function($scope, $mdDialog, $state) {
+          $scope.ok = function() {
+            $mdDialog.hide();
+          };
+        }],
+        templateUrl: 'app/components/blindness/blindness.html'
+      });
+
+      $mdDialog.show(confirm).then(function() {
+
+      });
 
       $scope.test = function() {
         console.log("test");

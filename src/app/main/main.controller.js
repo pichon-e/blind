@@ -9,6 +9,12 @@
   function MainController($scope, $window) {
     var vm = this;
 
+    $scope.hasToBeShown = false;
+
+    $scope.show = function() {
+        $scope.hasToBeShown = true;
+    }
+
     var ctx = document.getElementById("chart1");
     new Chart(ctx, {
       type: 'bar',
