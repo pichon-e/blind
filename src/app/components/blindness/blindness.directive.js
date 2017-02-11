@@ -8,10 +8,14 @@
   /** @ngInject */
   function blindness() {
     var directive = {
-      restrict: 'E',
       scope: {
       },
-      controller:     function blindnessController($scope, $window, $mdDialog) {
+      controller: blindnessController
+    };
+
+    return directive;
+
+    function blindnessController($scope, $window, $mdDialog) {
 
       var confirm = $mdDialog.confirm({
         controller: ['$scope', '$mdDialog', '$state', function($scope, $mdDialog, $state) {
@@ -77,11 +81,6 @@
         console.log("haut");
       }
     }
-    };
-
-    return directive;
-
-
 
   }
 
