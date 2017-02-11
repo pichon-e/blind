@@ -12,7 +12,7 @@
     $scope.hasToBeShown = false;
 
     $scope.show = function() {
-        $scope.hasToBeShown = true;
+        $scope.hasToBeShown = !$scope.hasToBeShown;
     }
 
     var ctx = document.getElementById("chart1");
