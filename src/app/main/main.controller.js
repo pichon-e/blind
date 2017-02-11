@@ -9,35 +9,18 @@
   function MainController($scope, $window) {
     var vm = this;
 
-    $scope.hasToBeShown = false;
+    $scope.hasToBeShown1 = false;
+    $scope.hasToBeShown2 = false;
 
-    $scope.show = function() {
-        $scope.hasToBeShown = !$scope.hasToBeShown;
+    $scope.show1 = function() {
+        $scope.hasToBeShown1 = !$scope.hasToBeShown1;
     }
 
-          $scope.tab = [
-            {
-              date: 1950,
-              data: 50
-            },
-            {
-              date: 1960,
-              data: 190
-            },
-            {
-              date: 1970,
-              data: 1500
-            },
-            {
-              date: 1980,
-              data: 456842
-            }
-          ];
+    $scope.show2 = function() {
+        $scope.hasToBeShown2 = !$scope.hasToBeShown2;
+    }
 
-    new Chart(document.getElementById("chart1"), {
-      type: 'bar',
-      backgroundColor: "#0386c3",
-      data: {
+    $scope.chart1Value = {
         labels: [
                 1982,
                 1983,
@@ -74,10 +57,8 @@
                 2014,
                 2015,
                 2016
-            ],
-        datasets: [{
-          label: '# of Votes',
-          data: [
+        ],
+        data: [
                     55572620,
                     55905460,
                     56166175,
@@ -114,6 +95,16 @@
                     66381000,
                     66627602
                 ]
+    }
+
+    new Chart(document.getElementById("chart1"), {
+      type: 'bar',
+      backgroundColor: "#0386c3",
+      data: {
+        labels: $scope.chart1Value.labels,
+        datasets: [{
+          label: '# of Votes',
+          data: $scope.chart1Value.data
         }],
         options: {
           scales: {
@@ -126,11 +117,11 @@
       }
     })
 
-    new Chart(document.getElementById("chart2"), {
-      type: 'bar',
-      backgroundColor: "#0386c3",
-      data: {
-        labels: [
+    $scope.title1 = "Evolution de la population française entre 1982 et 2016";
+    $scope.title2 = "Solde naturel en france entre 1982 et 2015";
+
+    $scope.chart2Value = {
+        labels :[
             1982,
             1983,
             1984,
@@ -166,9 +157,7 @@
             2014,
             2015
         ],
-        datasets: [{
-            label: 'Solde naturel',
-            data: [
+        data: [
                 272536,
                 207686,
                 237170,
@@ -204,6 +193,16 @@
                 259300,
                 200000
             ]
+    }
+
+    new Chart(document.getElementById("chart2"), {
+      type: 'bar',
+      backgroundColor: "#0386c3",
+      data: {
+        labels: $scope.chart2Value.labels,
+        datasets: [{
+            label: 'Solde naturel',
+            data: $scope.chart2Value.data
         }],
         options: {
             scales: {

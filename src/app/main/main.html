@@ -1,4 +1,4 @@
-<h1>8 graphiques pour comprendre la démographie française</h1>
+<h1>2 graphiques pour comprendre la démographie française</h1>
 
 <p>
     L’Insee a dévoilé mardi le bilan démographique de la France en 2015, qui se
@@ -21,8 +21,6 @@
 <h2>
     66,6 millions de Français
 </h2>
-<md-button class="md-primary md-raised" ng-click="show()">Taper deux fois pour énoncer le graphique</md-button>
-<blindness ng-if="hasToBeShown" is-shown="hasToBeShown" dataset="tab"></blindness>
 <p>
     C’est le nombre de Français au 1er janvier 2016, selon l’Insee. La population
     française est en croissance continue et a augmenté de 247 000 personnes entre
@@ -31,6 +29,8 @@
     (64,8 millions).
 </p>
 
+<md-button class="md-primary md-raised" ng-click="show1()">Taper deux fois pour énoncer le graphique</md-button>
+<blindness ng-if="hasToBeShown1"  dataset="chart1Value" title="title1"></blindness>
 <canvas id="chart1" width="400" height="400"></canvas>
 
 <h2>Naissances et décès en baisse</h2>
@@ -41,6 +41,8 @@
     également positif (environ 47 000 personnes).
 </p>
 
+<md-button class="md-primary md-raised" ng-click="show2()">Taper deux fois pour énoncer le graphique</md-button>
+<blindness ng-if="hasToBeShown2"  dataset="chart2Value" title="title2"></blindness>
 <canvas id="chart2" width="400" height="400"></canvas>
 
 <p>

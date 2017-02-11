@@ -1,8 +1,9 @@
 <md-dialog class="large-dialog" md-autofocus>
     <md-dialog-content layout="column" layout-align="center center">
         <div class="main" md-swipe-up="close()">
+            <h2>{{title}}</h2>
 
-            <p ng-repeat="item in dataset"> En {{item.date}} la valeur est {{item.data}}</p>
+            <p ng-repeat="item in dataset.labels"> En {{item}} la valeur est {{dataset.data[$index]}}</p>
             <md-button class="md-primary md-raised" ng-click="close()">Quitter le graph</md-button>
 
         </div>
