@@ -15,7 +15,7 @@
 
     return directive;
 
-    function blindnessController($scope, $mdDialog) {
+    function blindnessController($scope, $mdDialog, $window) {
 
       var confirm = $mdDialog.confirm({
         controller: ['$scope', '$mdDialog', '$window', function($scope, $mdDialog, $window) {
