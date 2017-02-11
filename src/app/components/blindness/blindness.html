@@ -3,7 +3,7 @@
         <div class="main" md-swipe-up="close()">
             <h2>{{title}}</h2>
 
-            <div ng-repeat="item in dataset.labels"> En {{item}} la valeur est {{dataset.data[$index]}}</div>
+            <p ng-repeat="item in dataset.labels"> En {{item}} la valeur est {{dataset.data[$index]}}</p>
             <md-button class="md-primary md-raised" ng-click="close()">Quitter le graph</md-button>
 
         </div>
