@@ -1,4 +1,4 @@
-<md-button id="click">mode blind</md-button>
+<div id="click"></div>
 
 <h1>2 graphiques pour comprendre la démographie française</h1>
 
@@ -29,9 +29,10 @@
     (64,8 millions).
 </p>
 <div layout="row" layout-align="center center">
-    <md-button class="md-primary md-raised" id="button1" ng-click="show1()">Taper deux fois pour énoncer le graphique button1</md-button>
+    <md-button class="md-primary md-raised" id="button1" ng-click="show1()">Taper deux fois pour énoncer le graphique</md-button>
 </div>
 <blindness ng-if="hasToBeShown1"  dataset="chart1Value" title="title1"></blindness>
+<div id="test"></div>
 <canvas id="chart1" width="400" height="400"></canvas>
 
 <h2>Naissances et décès en baisse</h2>
