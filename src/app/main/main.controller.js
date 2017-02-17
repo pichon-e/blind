@@ -61,7 +61,7 @@
                 ]
     }
 
-    new Chart(document.getElementById("chart1"), {
+    $window.chart1 = new Chart(document.getElementById("chart1"), {
       type: 'bar',
       backgroundColor: "#0386c3",
       data: {
